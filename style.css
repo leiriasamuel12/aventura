@@ -1,0 +1,19 @@
+
+@impor url('https://fonts.googleapis.com/css2?family=Epunda')
+
+body{
+    background-color: aqua;
+    color: red;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    margin: 0;
+    font-family: Passion One;
+}
+
+button {
+    background-color: #64A712;
+    color: white;
+
+}

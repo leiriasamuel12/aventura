@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="passo ativo" id="passo-0">
+            <p>Um dia desses eu passeava por uma estrada e tinha portal mágico onde eu poderia decidir dois caminhos: </p>
+            <button class="btn-proximo" data-proximo="1">Belém</button>
+            <button class="btn-proximo" data-proximo="2">Manaus</button>
+        </div>
+        <div class="passo" id="passo-1">
+            <p>Você começa a jornada em Belém indo no mercado Ver-o-Peso para encontrar a primeira pista.</p>
+            <button class="btn-proximo" data-proximo="3">Procurar a pista no Ver-o-Peso</button>
+            <button class="btn-proximo" data-proximo="4">Desistir e voltar para casa</button>
+        </div>
+        <div class="passo" id="passo-2">
+            <p>Você escolheu Manaus e chega ao Teatro Amazonas, onde uma apresentação misteriosa está prestes a começar.</p>
+            <button class="btn-proximo" data-proximo="5">Assistir à apresentação</button>
+            <button class="btn-proximo" data-proximo="4">Desistir e voltar para casa</button>
+        </div>
+        <div class="passo" id="passo-3">
+            <p>No Ver-o-Peso, você encontra uma pista escondida em uma caixa de especiarias. Ela indica um novo destino: Alter do Chão.</p>
+            <button class="btn-proximo" data-proximo="6">Ir para Alter do Chão</button>
+        </div>
+        <div class="passo" id="passo-4">
+            <p>Você decidiu voltar para casa. Fim da aventura!</p>
+        </div>
+        <div class="passo" id="passo-5">
+            <p>Durante a apresentação, você recebe um convite secreto para explorar a floresta amazônica em busca de um tesouro perdido.</p>
+            <button class="btn-proximo" data-proximo="7">Aceitar o convite</button>
+        </div>
+        <div class="passo" id="passo-6">
+            <p>Em Alter do Chão, você descobre uma ilha misteriosa e encontra um mapa antigo que leva ao tesouro.</p>
+            <button class="btn-proximo" data-proximo="8">Seguir o mapa</button>
+        </div>
+        <div class="passo" id="passo-7">
+            <p>Na floresta, você enfrenta desafios naturais e encontra aliados indígenas que ajudam na busca pelo tesouro.</p>
+            <button class="btn-proximo" data-proximo="8">Continuar a busca</button>
+        </div>
+        <div class="passo" id="passo-8">
+            <p>Parabéns! Você encontrou o tesouro perdido da Amazônia e se tornou um grande aventureiro!</p>
+        </div>
+    </main>
+    <script>
+        const passos = document.querySelectorAll('.passo');
+        document.querySelectorAll('.btn-proximo').forEach(btn => {
+            btn.addEventListener('click', () => {
+                passos.forEach(p => p.classList.remove('ativo'));
+                const proximo = btn.getAttribute('data-proximo');
+                document.getElementById('passo-' + proximo).classList.add('ativo');
+            });
+        });
+    </script>
+</body>
+</html>
